@@ -167,9 +167,9 @@ template<class ItemType>
 void ArrayBag<ItemType>::operator/=(const ArrayBag<ItemType> &a_bag)
 {
     // for loop the total items in a_bag
-    for (int i = 0; i < this->getCurrentSize(); i++) {
+    for (int i = 0; i < a_bag.getCurrentSize(); i++) {
         // NOT [check if item from lhs is found in rhs (a_bag)]
-        if(!a_bag.contains(this->items_[i]))
+        if (!a_bag.contains(this->items_[i]))
         {
             this->remove(this->items_[i]);
         }
