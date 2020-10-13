@@ -127,10 +127,10 @@ void ArrayBag<ItemType>::operator+=(const ArrayBag<ItemType> &a_bag)
     for(int i=0; i < a_bag.getCurrentSize(); i++)
     {
         // check if item from rhs is found in lhs
-        //        if (this->contains(a_bag.items_[i]))
-        //        {
-        this->add(a_bag.items_[i]);
-        //        }
+        if (!this->contains(a_bag.items_[i]))
+        {
+            this->add(a_bag.items_[i]);
+        }
     }
 }
 
