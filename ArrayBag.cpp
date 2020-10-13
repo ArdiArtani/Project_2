@@ -123,9 +123,14 @@ int ArrayBag<ItemType>::getFrequencyOf(const ItemType& an_entry) const {
 template<class ItemType>
 void ArrayBag<ItemType>::operator+=(const ArrayBag<ItemType> &a_bag)
 {
+    // for loop the total items in a_bag
     for(int i=0; i < a_bag.getCurrentSize(); i++)
     {
+        // check if item from rhs is found in lhs
+        //        if (this->contains(a_bag.items_[i]))
+        //        {
         this->add(a_bag.items_[i]);
+        //        }
     }
 }
 
@@ -143,8 +148,10 @@ void ArrayBag<ItemType>::operator+=(const ArrayBag<ItemType> &a_bag)
 template<class ItemType>
 void ArrayBag<ItemType>::operator-=(const ArrayBag<ItemType> &a_bag)
 {
+    // for loop the total items in a_bag
     for(int i=0; i < a_bag.getCurrentSize(); i++)
     {
+        // check if item from rhs is found in lhs
         if (this->contains(a_bag.items_[i]))
         {
             this->remove(a_bag.items_[i]);
