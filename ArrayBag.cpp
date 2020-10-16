@@ -206,7 +206,10 @@ bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
             return true;
         }
     }
-    return false;
+    else
+    {
+        return false;
+    }
 }
 
 
@@ -232,7 +235,10 @@ bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
             return true;
         }
     }
-    return false;
+    else
+    {
+        return false;
+    }
 }
 
 // PROTECTED MEMBERS
