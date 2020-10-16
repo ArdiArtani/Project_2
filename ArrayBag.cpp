@@ -205,7 +205,6 @@ bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
         return true;
     }
     
-    
 //    if(this->getCurrentSize() == a_bag.getCurrentSize())
 //    {
 //        for (int i = 0; i < this->item_count_; i++) {
@@ -217,6 +216,7 @@ bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
 //        return true;
 //    }
 //    return false;
+    
 }
 
 
@@ -230,26 +230,21 @@ bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
 template<class ItemType>
 bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
 {
-    if(this->getCurrentSize() != a_bag.getCurrentSize())
-    {
-        for (int i = 0; i < this->item_count_; i++) {
-            if(this->contains(a_bag.items_[i]))
-            {
-                return false;
-            }
+    
+    // for loop the total items in a_bag
+    for (int i = 0; i < a_bag.getCurrentSize(); i++) {
+        if (a_bag.contains(this->items_[i]))
+        {
+            return false;
         }
         return true;
     }
-    return false;
     
-//    if(this->item_count_ == a_bag.item_count_)
+    
+//    if(this->getCurrentSize() != a_bag.getCurrentSize())
 //    {
-//        return false;
 //    }
-//    return true;
 }
-
-
 
 // PROTECTED MEMBERS
 
