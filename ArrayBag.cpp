@@ -195,21 +195,21 @@ void ArrayBag<ItemType>::operator/=(const ArrayBag<ItemType> &a_bag)
 template<class ItemType>
 bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
 {
-    if( (this->getCurrentSize() == a_bag.getCurrentSize()) && !(this->isEmpty()) && !(a_bag.isEmpty()))
+    if( !(this->isEmpty()) && !(a_bag.isEmpty()) )
     {
-        // for loop the total items in a_bag
-        for (int i = 0; i < a_bag.getCurrentSize(); i++) {
-            if (!a_bag.contains(this->items_[i]))
-            {
-                return false;
+        if(this->getCurrentSize() == a_bag.getCurrentSize())
+        {
+            // for loop the total items in a_bag
+            for (int i = 0; i < a_bag.getCurrentSize(); i++) {
+                if (!a_bag.contains(this->items_[i]))
+                {
+                    return false;
+                }
+                return true;
             }
-            return true;
-        }
-    }
-    else
-    {
-        return false;
-    }
+        } // size comparison
+    } // check if array is empty
+    return false;
 }
 
 
@@ -223,21 +223,21 @@ bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
 template<class ItemType>
 bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
 {
-    if( (this->getCurrentSize() == a_bag.getCurrentSize()) && !(this->isEmpty()) && !(a_bag.isEmpty()))
+    if( !(this->isEmpty()) && !(a_bag.isEmpty()) )
     {
-        // for loop the total items in a_bag
-        for (int i = 0; i < a_bag.getCurrentSize(); i++) {
-            if (a_bag.contains(this->items_[i]))
-            {
-                return false;
+        if(this->getCurrentSize() == a_bag.getCurrentSize())
+        {
+            // for loop the total items in a_bag
+            for (int i = 0; i < a_bag.getCurrentSize(); i++) {
+                if (a_bag.contains(this->items_[i]))
+                {
+                    return false;
+                }
+                return true;
             }
-            return true;
-        }
-    }
-    else
-    {
-        return false;
-    }
+        } // size comparison
+    } // check if array is empty
+    return false;
 }
 
 // PROTECTED MEMBERS
