@@ -197,7 +197,7 @@ bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
 {
     if(this->getCurrentSize() == a_bag.getCurrentSize())
     {
-        for (int i = 0; i < this->getCurrentSize(); ++i) {
+        for (int i = 0; i < this->item_count_; i++) {
             if(!this->contains(a_bag.items_[i]))
             {
                 return false;
@@ -221,7 +221,7 @@ bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
 {
     if(this->getCurrentSize() != a_bag.getCurrentSize())
     {
-        for (int i = 0; i < this->getCurrentSize(); i++) {
+        for (int i = 0; i < this->item_count_; i++) {
             if(this->contains(a_bag.items_[i]))
             {
                 return false;
