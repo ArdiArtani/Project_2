@@ -227,22 +227,44 @@ bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
 template<class ItemType>
 bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
 {
-    if( (this->isEmpty()) != (a_bag.isEmpty()) )
+    
+    // If both bags are empty, then they are equal.
+    if( this->isEmpty() == a_bag.isEmpty() )
     {
-        return true;
+        return false;
     }
+    // Two bags must be of equal sizes
     else if (this->getCurrentSize() == a_bag.getCurrentSize())
     {
         // for loop the total items in a_bag
         for (int i = 0; i < a_bag.getCurrentSize(); i++) {
-            if (a_bag.contains(this->items_[i]))
+            // NOT [check if a_bag contains this item, if found returns true]
+            if (!a_bag.contains(this->items_[i]))
             {
                 return true;
             }
         }
         return false;
     }
-    return false;
+    return true;
+    
+    
+//    if( (this->isEmpty()) != (a_bag.isEmpty()) )
+//    {
+//        return true;
+//    }
+//    else if (this->getCurrentSize() == a_bag.getCurrentSize())
+//    {
+//        // for loop the total items in a_bag
+//        for (int i = 0; i < a_bag.getCurrentSize(); i++) {
+//            if (a_bag.contains(this->items_[i]))
+//            {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+//    return false;
 }
 
 // PROTECTED MEMBERS
