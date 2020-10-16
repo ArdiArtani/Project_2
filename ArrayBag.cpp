@@ -195,28 +195,18 @@ void ArrayBag<ItemType>::operator/=(const ArrayBag<ItemType> &a_bag)
 template<class ItemType>
 bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
 {
-    
-    // for loop the total items in a_bag
-    for (int i = 0; i < a_bag.getCurrentSize(); i++) {
-        if (!a_bag.contains(this->items_[i]))
-        {
-            return false;
+    if(this->getCurrentSize() == a_bag.getCurrentSize())
+    {
+        // for loop the total items in a_bag
+        for (int i = 0; i < a_bag.getCurrentSize(); i++) {
+            if (!a_bag.contains(this->items_[i]))
+            {
+                return false;
+            }
+            return true;
         }
-        return true;
     }
-    
-//    if(this->getCurrentSize() == a_bag.getCurrentSize())
-//    {
-//        for (int i = 0; i < this->item_count_; i++) {
-//            if(!this->contains(a_bag.items_[i]))
-//            {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
-//    return false;
-    
+    return false;
 }
 
 
@@ -231,19 +221,18 @@ template<class ItemType>
 bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
 {
     
-    // for loop the total items in a_bag
-    for (int i = 0; i < a_bag.getCurrentSize(); i++) {
-        if (a_bag.contains(this->items_[i]))
-        {
-            return false;
+    if(this->getCurrentSize() == a_bag.getCurrentSize())
+    {
+        // for loop the total items in a_bag
+        for (int i = 0; i < a_bag.getCurrentSize(); i++) {
+            if (a_bag.contains(this->items_[i]))
+            {
+                return false;
+            }
+            return true;
         }
-        return true;
     }
-    
-    
-//    if(this->getCurrentSize() != a_bag.getCurrentSize())
-//    {
-//    }
+    return false;
 }
 
 // PROTECTED MEMBERS
