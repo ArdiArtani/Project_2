@@ -205,10 +205,7 @@ bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
         }
         return true;
     }
-    else
-    {
-        return false;
-    }
+    return false;
 }
 
 
@@ -232,10 +229,7 @@ bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
         }
         return true;
     }
-    else
-    {
-        return false;
-    }
+    return false;
     
 //    if(this->item_count_ == a_bag.item_count_)
 //    {
@@ -281,4 +275,5 @@ int ArrayBag<ItemType>::getIndexOf(const ItemType& target) const {
 
 
 // end of ArrayBag.cpp
+
 
