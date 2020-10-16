@@ -237,10 +237,10 @@ bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
         for (int i = 0; i < a_bag.getCurrentSize(); i++) {
             if (a_bag.contains(this->items_[i]))
             {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
     return false;
 }
