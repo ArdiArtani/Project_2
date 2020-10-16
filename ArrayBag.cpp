@@ -195,8 +195,8 @@ void ArrayBag<ItemType>::operator/=(const ArrayBag<ItemType> &a_bag)
 template<class ItemType>
 bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
 {
-    // If both bags are empty, then they are equal. // You wrote return false in the == operator when they are empty.
-    if( (this->isEmpty()) == (a_bag.isEmpty()) )
+    // If both bags are empty, then they are equal.
+    if( this->isEmpty() == a_bag.isEmpty() )
     {
         return true;
     }
@@ -231,7 +231,7 @@ bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
     {
         return true;
     }
-    else if (this->getCurrentSize() != a_bag.getCurrentSize())
+    else if (this->getCurrentSize() == a_bag.getCurrentSize())
     {
         // for loop the total items in a_bag
         for (int i = 0; i < a_bag.getCurrentSize(); i++) {
