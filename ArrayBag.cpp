@@ -227,9 +227,9 @@ bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
 {
     if( (this->isEmpty()) && (a_bag.isEmpty()) )
     {
-        return true;
+        return false;
     }
-    else if (this->getCurrentSize() == a_bag.getCurrentSize())
+    else if (this->getCurrentSize() != a_bag.getCurrentSize())
     {
         // for loop the total items in a_bag
         for (int i = 0; i < a_bag.getCurrentSize(); i++) {
