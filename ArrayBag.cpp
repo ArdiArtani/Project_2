@@ -195,7 +195,7 @@ void ArrayBag<ItemType>::operator/=(const ArrayBag<ItemType> &a_bag)
 template<class ItemType>
 bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
 {
-    if( (this->isEmpty()) && (a_bag.isEmpty()) )
+    if( !(this->isEmpty()) && !(a_bag.isEmpty()) )
     {
         if(this->getCurrentSize() == a_bag.getCurrentSize())
         {
@@ -223,7 +223,7 @@ bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
 template<class ItemType>
 bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
 {
-    if( (this->isEmpty()) && (a_bag.isEmpty()) )
+    if( !(this->isEmpty()) && !(a_bag.isEmpty()) )
     {
         if(this->getCurrentSize() == a_bag.getCurrentSize())
         {
