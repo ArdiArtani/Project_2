@@ -208,8 +208,8 @@ bool ArrayBag<ItemType>::operator==(const ArrayBag<ItemType> &a_bag)
             {
                 return false;
             }
+            return true;
         }
-        return true;
     } // size comparison
     return false;
 }
@@ -237,8 +237,8 @@ bool ArrayBag<ItemType>::operator!=(const ArrayBag<ItemType> &a_bag)
             {
                 return false;
             }
+            return true;
         }
-        return true;
     } // size comparison
     return false;
 }
